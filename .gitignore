@@ -1,6 +1,10 @@
 # Secrets
 secrets.js
 
+#General
+avatars
+.DS_Store
+
 # Logs
 logs
 *.log
