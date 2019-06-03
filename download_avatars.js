@@ -22,10 +22,15 @@ var repoOwner = process.argv[2];
 var repoName = process.argv[3];
 
 getRepoContributors(repoOwner, repoName, function(err, result) {
-  console.log("Errors:", err);
-  result.forEach(function(user) {
-    downloadImageByURL(user.avatar_url, "avatars/" + user.login + ".jpg");
-  })
+  if (process.argv.length !== 4) {
+    console.log("Error! Not the specified amount of arguments given.");
+  } else {
+    result.forEach(function(user) {
+      downloadImageByURL(user.avatar_url, "avatars/" + user.login + ".jpg");
+      console.log("Downloading...")
+    })
+    console.log("Successfully downloaded the GitHub Avatars.")
+  }
 });
 
 function downloadImageByURL(url, filePath) {
