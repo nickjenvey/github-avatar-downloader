@@ -2,7 +2,7 @@
 secrets.js
 
 #General
-avatars
+avatars/
 .DS_Store
 
 # Logs
